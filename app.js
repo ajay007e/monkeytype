@@ -32,7 +32,7 @@ var multiplier = 0;
 var scrollFlag = 0;
 var wrongLetters = Array(240).fill(0);
 var isSound = 0;
-var audio = new Audio("typing_5.wav");
+var audio = new Audio("sounds/typing_5.wav");
 
 displayTest(difficulty);
 
