@@ -1,33 +1,33 @@
-html{
+html {
   background: #212121;
 }
 
-body{
-  font-family: 'Source Code Pro', monospace;
+body {
+  font-family: "Source Code Pro", monospace;
   background: #212121;
   color: #52575d;
 }
 
-a{
+a {
   color: #52575d;
 }
-.yellow{
+.yellow {
   color: #ffd369;
 }
-.correct{
+.correct {
   color: #29bb89;
 }
-.wrong{
+.wrong {
   color: #e84545;
   /* text-decoration: underline; */
 }
-.current{
+.current {
   color: #eeeeee;
 }
-.center{
+.center {
   text-align: center;
 }
-.if{
+.if {
   display: inline-flex;
 }
 
@@ -36,48 +36,48 @@ a{
   padding: 0 30px;
 }
 
-#heading{
+#heading {
   align-self: left;
   margin-top: 50px;
   font-size: 1.75rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 500;
 }
-.limits-box{
+.limits-box {
   text-align: right;
-  margin: 0 35px 0 0 ;
+  margin: 0 35px 0 0;
   font-size: 15px;
 }
 
-.stats{
+.stats {
   margin: 10px auto 20px auto;
 }
 
-.details{
+.details {
   font-size: 6rem;
 }
-.stat-block{
+.stat-block {
   padding: 0 30px;
   min-width: 250px;
 }
 
-@media(max-width: 600px){
-  .details{
+@media (max-width: 600px) {
+  .details {
     font-size: 5rem;
   }
-  .stat-block{
+  .stat-block {
     min-width: 0;
   }
 }
 
-.stat-name{
+.stat-name {
   font-size: 1rem;
   position: relative;
   top: 45px;
   right: 5px;
 }
 
-.text-display{
+.text-display {
   margin: 0;
   font-size: 21px;
   line-height: 33px;
@@ -87,40 +87,45 @@ a{
   overflow: hidden;
   /* background-color: red; */
 }
-#textData{
-  transition: transform .00001s ease 0s ;
+#textData {
+  transition: transform 0.00001s ease 0s;
 }
 
-input:focus, textarea:focus, select:focus, a:focus{
-  outline: 0 ;
+input:focus,
+textarea:focus,
+select:focus,
+a:focus {
+  outline: 0;
 }
-a:focus,a:hover{
-  color: #ffd369;
+a:focus,
+a:hover {
+  /* color: #ffd369; */
+  color: #b4b4b4;
   text-decoration: none;
 }
 
-footer{
+footer {
   padding: 20px;
   font-size: 15px;
 }
 
-.restart-button{
+.restart-button {
   padding: 10px;
 }
-.container-fluid{
+.container-fluid {
   position: relative;
 }
-.input-area.center{
+.input-area.center {
   position: absolute;
   top: 30%;
   opacity: 0;
   width: 100%;
-  height:50%;
+  height: 50%;
   z-index: 1000;
   /* background-color: red; */
 }
 
-textarea{
+textarea {
   background: #212121;
   border: solid, #52575d;
   border-width: 2px;
@@ -132,5 +137,3 @@ textarea{
   text-align: center;
   margin-bottom: 15px;
 }
-
-
