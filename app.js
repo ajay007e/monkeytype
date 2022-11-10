@@ -64,6 +64,7 @@ inputItem.addEventListener("input", function (event) {
 //display the score
 function displayScore() {
   let percentageAcc = 0;
+  showStat()
   if (letterNo !== 0) {
     percentageAcc = Math.floor((lettersCorrect / (letterNo - 1)) * 100);
   }
@@ -299,6 +300,25 @@ function limitInvisible() {
   sound.style.visibility = "hidden";
 }
 
+function hideStat(){
+  // time.style.visibility = "hidden";
+  timeName.style.visibility = "hidden";
+  cw.style.visibility = "hidden";
+  cwName.style.visibility = "hidden";
+  time.style.fontSize = '1.5rem' // font size 6
+  time.style.position = 'absolute'
+  time.style.left ='3rem'
+  time.style.top = '15rem'
+}
+function showStat(){
+  time.style.fontSize = "6rem"; // font size 6
+  time.style.left = "15rem";
+  time.style.top = "7.5rem";
+  timeName.style.visibility = "visible";
+  cw.style.visibility = "visible";
+  cwName.style.visibility = "visible";
+}
+
 //color the words
 function colorSpan(id, color) {
   const span = document.getElementById(id);
@@ -325,6 +345,8 @@ function colorSpan(id, color) {
 function displayTest(diff) {
   var ltrNo = 0;
   textData.innerHTML = "";
+
+  hideStat()
 
   let newTest = randomWords(diff);
   newTest.forEach(function (word, i) {
