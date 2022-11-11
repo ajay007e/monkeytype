@@ -288,6 +288,8 @@ function limitVisible() {
   sound.style.visibility = "visible";
 }
 function limitInvisible() {
+  time.style.visibility = "visible";
+
   fifteen.style.visibility = "hidden";
   thirty.style.visibility = "hidden";
   sixty.style.visibility = "hidden";
@@ -301,7 +303,7 @@ function limitInvisible() {
 }
 
 function hideStat(){
-  // time.style.visibility = "hidden";
+  time.style.visibility = "hidden";
   timeName.style.visibility = "hidden";
   cw.style.visibility = "hidden";
   cwName.style.visibility = "hidden";
