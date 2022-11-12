@@ -35,6 +35,41 @@ a {
   max-width: 900px;
   padding: 0 30px;
 }
+.head{
+  display: flex;
+  align-items: center;
+  /* cursor: pointer; */
+}
+
+.fa-info-circle{
+  cursor:pointer;
+ animation: bounce 2s ease 5;
+ animation: name duration timing-function delay iteration-count direction fill-mode;
+}
+
+@keyframes bounce {
+    70% { transform:translateY(0%); }
+    80% { transform:translateY(-15%); }
+    90% { transform:translateY(0%); }
+    95% { transform:translateY(-7%); }
+    97% { transform:translateY(0%); }
+    99% { transform:translateY(-3%); }
+    100% { transform:translateY(0); }
+}
+
+.fa-info-circle::after{
+  content: "inspired from Monekeytype";
+  opacity: 0;
+  border: 1px solid black;
+  padding: 5px 8px;
+  margin-left: 10px;
+  border-radius: 10px;
+  transition: 1s linear;
+}
+
+.fa-info-circle:hover::after{
+  opacity: 1;
+}
 
 #heading {
   align-self: left;

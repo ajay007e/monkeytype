@@ -13,10 +13,20 @@
 
     <title>Monkeytype</title>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon" />
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
-    <link rel="manifest" href="favicon/site.webmanifest" />
+    <link rel="apple-touch-icon" sizes="180x180" href="public/favicon" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="public/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="public/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="public/favicon/site.webmanifest" />
 
     <!--Bootstrap 4 -->
     <link
@@ -45,7 +55,11 @@
   <body>
     <div class="container-fluid box">
       <div class="top">
-        <h1 id="heading" class="yellow">monkeytype</h1>
+        <div class="head">
+          <h1 id="heading" class="yellow">monkeytype</h1>
+          <i class="fa fa-info-circle" aria-hidden="true"></i>
+          <!-- <p class="inspired">inspired from <a href='https://monkeytype.com/'>Monekeytype</a>"</p> -->
+        </div>
         <div class="limits-box">
           <div class="limit">
             <a id="fifteen" class="yellow" href="#">15s</a>
@@ -76,7 +90,6 @@
         </div>
       </div>
 
-      
       <div class="text-display" id="textDisplay">
         <div id="textData"></div>
       </div>

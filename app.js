@@ -32,7 +32,7 @@ var multiplier = 0;
 var scrollFlag = 0;
 var wrongLetters = Array(240).fill(0);
 var isSound = 0;
-var audio = new Audio("sounds/typing_5.wav");
+var audio = new Audio("public/sounds/typing_5.wav");
 
 displayTest(difficulty);
 
@@ -229,6 +229,9 @@ function limitColor(itema, id) {
 
 //restart the Test
 restartBtn.addEventListener("click", function () {
+  textData.style.transform = `translateY(${33 * (multiplier-1)}px)`;
+
+  multiplier = 0;
   wordsSubmitted = 0;
   wordsCorrect = 0;
   letterNo = 1;
@@ -246,6 +249,7 @@ restartBtn.addEventListener("click", function () {
   inputItem.disabled = false;
   inputItem.value = "";
   inputItem.focus();
+
 
   displayTest(difficulty);
   clearInterval(seconds);
@@ -351,6 +355,7 @@ function displayTest(diff) {
   hideStat()
 
   let newTest = randomWords(diff);
+  console.log(newTest);
   newTest.forEach(function (word, i) {
     letters = word.match(/.{1,1}/g);
     letters.forEach((letter, i) => {
