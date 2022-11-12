@@ -319,7 +319,7 @@ function hideStat(){
 function showStat(){
   time.style.fontSize = "6rem"; // font size 6
   time.style.left = "15rem";
-  time.style.top = "7.5rem";
+  time.style.top = "10.5rem";
   timeName.style.visibility = "visible";
   cw.style.visibility = "visible";
   cwName.style.visibility = "visible";
