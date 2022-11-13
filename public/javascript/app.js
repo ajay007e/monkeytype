@@ -45,6 +45,7 @@ inputSelection.addEventListener("click", () => {
 inputItem.addEventListener("keydown", (e) => {
   if (e.key == "Backspace") {
     backSpace();
+    makeSound();
   }
 });
 
@@ -54,17 +55,21 @@ inputItem.addEventListener("input", function (event) {
     timeStart();
   }
   checkWord();
+  makeSound();
+});
+
+function makeSound() {
   if (isSound) {
     audio.currentTime = 0;
     audio.muted = false;
     audio.play();
   }
-});
+}
 
 //display the score
 function displayScore() {
   let percentageAcc = 0;
-  showStat()
+  showStat();
   if (letterNo !== 0) {
     percentageAcc = Math.floor((lettersCorrect / (letterNo - 1)) * 100);
   }
@@ -229,7 +234,7 @@ function limitColor(itema, id) {
 
 //restart the Test
 restartBtn.addEventListener("click", function () {
-  textData.style.transform = `translateY(${33 * (multiplier-1)}px)`;
+  textData.style.transform = `translateY(${33 * (multiplier - 1)}px)`;
 
   multiplier = 0;
   wordsSubmitted = 0;
@@ -249,7 +254,6 @@ restartBtn.addEventListener("click", function () {
   inputItem.disabled = false;
   inputItem.value = "";
   inputItem.focus();
-
 
   displayTest(difficulty);
   clearInterval(seconds);
@@ -306,17 +310,17 @@ function limitInvisible() {
   sound.style.visibility = "hidden";
 }
 
-function hideStat(){
+function hideStat() {
   time.style.visibility = "hidden";
   timeName.style.visibility = "hidden";
   cw.style.visibility = "hidden";
   cwName.style.visibility = "hidden";
-  time.style.fontSize = '1.5rem' // font size 6
-  time.style.position = 'absolute'
-  time.style.left ='3rem'
-  time.style.top = '15rem'
+  time.style.fontSize = "1.5rem"; // font size 6
+  time.style.position = "absolute";
+  time.style.left = "3rem";
+  time.style.top = "15rem";
 }
-function showStat(){
+function showStat() {
   time.style.fontSize = "6rem"; // font size 6
   time.style.left = "15rem";
   time.style.top = "10.5rem";
@@ -352,7 +356,7 @@ function displayTest(diff) {
   var ltrNo = 0;
   textData.innerHTML = "";
 
-  hideStat()
+  hideStat();
 
   let newTest = randomWords(diff);
   console.log(newTest);
