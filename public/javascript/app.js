@@ -91,7 +91,7 @@ function backSpace() {
     const prevID = "letter " + (letterNo - 1);
     const prevSpan = document.getElementById(prevID);
 
-    if (window.scrollY + prevSpan.getBoundingClientRect().top > 313) {
+    if (window.scrollY + prevSpan.getBoundingClientRect().top > 335) {
       var currentID = "letter " + letterNo;
       colorSpan(currentID, 4);
 
@@ -113,7 +113,7 @@ function backSpace() {
         }
       }
       colorSpan(currentID, 2);
-      // console.log(window.scrollY + currentSpan.getBoundingClientRect().top);
+      console.log(window.scrollY + currentSpan.getBoundingClientRect().top);
     }
 
     // 313.59375
@@ -150,7 +150,8 @@ function checkWord() {
   const nextID = "letter " + letterNo;
   const nextSpan = document.getElementById(nextID);
   colorSpan(nextID, 2);
-  if (window.scrollY + nextSpan.getBoundingClientRect().top > 350) {
+  if (window.scrollY + nextSpan.getBoundingClientRect().top > 370) {
+    // console.log(window.scrollY + nextSpan.getBoundingClientRect().top);
     multiplier++;
     textData.style.transform = `translateY(-${33 * multiplier}px)`;
   }
@@ -359,7 +360,7 @@ function displayTest(diff) {
   hideStat();
 
   let newTest = randomWords(diff);
-  console.log(newTest);
+  // console.log(newTest);
   newTest.forEach(function (word, i) {
     letters = word.match(/.{1,1}/g);
     letters.forEach((letter, i) => {
