@@ -235,8 +235,7 @@ function limitColor(itema, id) {
 
 //restart the Test
 restartBtn.addEventListener("click", function () {
-  textData.style.transform = `translateY(${33 * (multiplier)}px)`;
-
+  textData.style.transform = `translateY(${0}px)`;
   multiplier = 0;
   wordsSubmitted = 0;
   wordsCorrect = 0;
