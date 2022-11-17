@@ -59,7 +59,7 @@ inputItem.addEventListener("input", function (event) {
 });
 
 function makeSound() {
-  if (isSound) {
+  if (isSound==1) {
     audio.currentTime = 0;
     audio.muted = false;
     audio.play();
@@ -369,11 +369,11 @@ function displayTest(diff) {
 
     let { time: t, diff: d, sound: s } = obj;
     console.log(t, d, s);
-    s === "muted"
+    s === "mute"
       ? sound.classList.remove("yellow")
       : sound.classList.add("yellow");
 
-    isSound = s === "muted" ? 0 : 1;
+    isSound = s === "mute" ? 0 : 1;
 
     d === '0' ? limitColor(beg, 1) : limitColor(pro, 1);
     difficulty = d === "0" ? 0 : 1;
