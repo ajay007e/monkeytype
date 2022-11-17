@@ -26,7 +26,7 @@ var timer = 15;
 var timeTaken = 15;
 var flag = 0;
 var seconds;
-var difficulty = 2;
+var difficulty = 0;
 var totalLetters = 1;
 var multiplier = 0;
 var scrollFlag = 0;
@@ -161,8 +161,10 @@ sound.addEventListener("click", function () {
   isSound = isSound == 1 ? 0 : 1;
   if (sound.classList.contains("yellow")) {
     sound.classList.remove("yellow");
+    document.cookie = "sound=mute";
   } else {
     sound.classList.add("yellow");
+    document.cookie = "sound=unmute";
   }
   inputItem.focus();
 });
@@ -174,6 +176,7 @@ fifteen.addEventListener("click", function () {
   limitColor(fifteen, 0);
   time.innerText = timer;
   inputItem.focus();
+  document.cookie = "time=fifteen";
 });
 thirty.addEventListener("click", function () {
   timer = 30;
@@ -181,6 +184,7 @@ thirty.addEventListener("click", function () {
   limitColor(thirty, 0);
   time.innerText = timer;
   inputItem.focus();
+  document.cookie = "time=thirty";
 });
 sixty.addEventListener("click", function () {
   timer = 60;
@@ -188,6 +192,7 @@ sixty.addEventListener("click", function () {
   limitColor(sixty, 0);
   time.innerText = timer;
   inputItem.focus();
+  document.cookie = "time=sixty";
 });
 oneTwenty.addEventListener("click", function () {
   timer = 120;
@@ -195,6 +200,7 @@ oneTwenty.addEventListener("click", function () {
   limitColor(oneTwenty, 0);
   time.innerText = timer;
   inputItem.focus();
+  document.cookie = "time=oneTwenty";
 });
 twoForty.addEventListener("click", function () {
   timer = 240;
@@ -202,24 +208,28 @@ twoForty.addEventListener("click", function () {
   limitColor(twoForty, 0);
   time.innerText = timer;
   inputItem.focus();
+  document.cookie = "time=twoForty";
 });
 
 //difficulty Selection
 beg.addEventListener("click", function () {
-  difficulty = 1;
+  difficulty = 0;
   displayTest(difficulty);
   limitColor(beg, 1);
   inputItem.focus();
+  document.cookie = "diff=0";
 });
 pro.addEventListener("click", function () {
-  difficulty = 2;
+  difficulty = 1;
   displayTest(difficulty);
   limitColor(pro, 1);
   inputItem.focus();
+  document.cookie = "diff=1";
 });
 
 //set the color of time and difficulty
 function limitColor(itema, id) {
+  // console.log(itema,id);
   if (id === 0) {
     fifteen.classList.remove("yellow");
     thirty.classList.remove("yellow");
@@ -353,6 +363,54 @@ function colorSpan(id, color) {
 
 //display the random words on screen
 function displayTest(diff) {
+  if (document.cookie) {
+    let data = document.cookie.split("; ").map((row) => row.split("="));
+    let obj = Object.fromEntries(data.map(([v, k]) => [v, k]));
+
+    let { time: t, diff: d, sound: s } = obj;
+    console.log(t, d, s);
+    s === "muted"
+      ? sound.classList.remove("yellow")
+      : sound.classList.add("yellow");
+
+    isSound = s === "muted" ? 0 : 1;
+
+    d === '0' ? limitColor(beg, 1) : limitColor(pro, 1);
+    difficulty = d === "0" ? 0 : 1;
+    diff = difficulty
+
+    if (t === "fifteen") {
+      limitColor(fifteen, 0);
+      timer = 15;
+      timeTaken=15;
+    } else if (t === "thirty") {
+      limitColor(thirty, 0);
+      timer = 30;
+      timeTaken=30;
+    } else if (t === "sixty") {
+      limitColor(sixty, 0);
+      timer = 60;
+      timeTaken= 60;
+    } else if (t === "oneTwenty") {
+      limitColor(oneTwenty, 0);
+      timer = 120;
+      timeTaken= 120;
+    } else if (t === "twoForty") {
+      limitColor(twoForty, 0);
+      timer = 240;
+      timeTaken= 240;
+    }
+  time.innerText = timer;
+
+  } else {
+    document.cookie = "time=fifteen";
+    document.cookie = "diff=0";
+    document.cookie = "sound=mute";
+    fifteen.classList.add("yellow");
+    beg.classList.add("yellow");
+    sound.classList.remove("yellow");
+  }
+
   var ltrNo = 0;
   textData.innerHTML = "";
 
@@ -2040,7 +2098,7 @@ function randomWords(diff) {
     "zoo",
   ];
 
-  if (diff == 1) {
+  if (diff == 0) {
     wordArray = basicWords;
   } else {
     wordArray = topWords;
