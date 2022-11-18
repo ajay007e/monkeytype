@@ -14,6 +14,7 @@ const twoForty = document.getElementById("twoForty");
 const beg = document.getElementById("beg");
 const pro = document.getElementById("pro");
 const sound = document.getElementById("sound");
+
 const inputSelection = document.querySelector(
   "body > div > div.input-area.center"
 );
@@ -306,7 +307,7 @@ function limitVisible() {
   sound.style.visibility = "visible";
 }
 function limitInvisible() {
-  time.style.visibility = "visible";
+  time.style.visibility = "visible";  
 
   fifteen.style.visibility = "hidden";
   thirty.style.visibility = "hidden";
@@ -321,22 +322,24 @@ function limitInvisible() {
 }
 
 function hideStat() {
-  // time.style.visibility = "hidden";
-  // timeName.style.visibility = "hidden";
-  // cw.style.visibility = "hidden";
-  // cwName.style.visibility = "hidden";
-  // time.style.fontSize = "1.5rem"; // font size 6
-  // time.style.position = "absolute";
-  // time.style.left = "3rem";
-  // time.style.top = "15rem";
+  timeName.style.visibility = "hidden";
+  cw.style.visibility = "hidden";
+  cwName.style.visibility = "hidden";
+  time.style.visibility = "hidden";
+  time.style.fontSize = "1.5rem"; // font size 6
+  time.style.position = "absolute";
+  time.style.left = "3rem";
+  time.style.top = "18rem";
 }
 function showStat() {
-  // time.style.fontSize = "6rem"; // font size 6
+  time.style.fontSize = "6rem"; // font size 6
+  time.style.position = "";
   // time.style.left = "15rem";
   // time.style.top = "10.5rem";
-  // timeName.style.visibility = "visible";
-  // cw.style.visibility = "visible";
-  // cwName.style.visibility = "visible";
+  time.style.visibility = "visible";
+  timeName.style.visibility = "visible";
+  cw.style.visibility = "visible";
+  cwName.style.visibility = "visible";
 }
 
 //color the words
