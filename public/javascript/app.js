@@ -321,22 +321,22 @@ function limitInvisible() {
 }
 
 function hideStat() {
-  time.style.visibility = "hidden";
-  timeName.style.visibility = "hidden";
-  cw.style.visibility = "hidden";
-  cwName.style.visibility = "hidden";
-  time.style.fontSize = "1.5rem"; // font size 6
-  time.style.position = "absolute";
-  time.style.left = "3rem";
-  time.style.top = "15rem";
+  // time.style.visibility = "hidden";
+  // timeName.style.visibility = "hidden";
+  // cw.style.visibility = "hidden";
+  // cwName.style.visibility = "hidden";
+  // time.style.fontSize = "1.5rem"; // font size 6
+  // time.style.position = "absolute";
+  // time.style.left = "3rem";
+  // time.style.top = "15rem";
 }
 function showStat() {
-  time.style.fontSize = "6rem"; // font size 6
-  time.style.left = "15rem";
-  time.style.top = "10.5rem";
-  timeName.style.visibility = "visible";
-  cw.style.visibility = "visible";
-  cwName.style.visibility = "visible";
+  // time.style.fontSize = "6rem"; // font size 6
+  // time.style.left = "15rem";
+  // time.style.top = "10.5rem";
+  // timeName.style.visibility = "visible";
+  // cw.style.visibility = "visible";
+  // cwName.style.visibility = "visible";
 }
 
 //color the words
