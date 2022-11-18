@@ -46,11 +46,31 @@ a {
   /* cursor: pointer; */
 }
 
+.fa-cog{
+  font-size: 1.2rem;
+  animation: hithere 2s ease infinite;
+
+}
+
+@keyframes hithere {
+  30% { transform: scale(1.2); }
+  40%, 60% { transform: rotate(-20deg) scale(1.2); }
+  50% { transform: rotate(20deg) scale(1.2); }
+  70% { transform: rotate(0deg) scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+@keyframes gelatine {
+  from, to { transform: scale(1, 1); }
+  25% { transform: scale(0.9, 1.1); }
+  50% { transform: scale(1.1, 0.9); }
+  75% { transform: scale(0.95, 1.05); }
+}
+
 .fa-info-circle {
   cursor: pointer;
   animation: bounce 2s ease 5;
-  animation: name duration timing-function delay iteration-count direction
-    fill-mode;
+ 
 }
 
 @keyframes bounce {
